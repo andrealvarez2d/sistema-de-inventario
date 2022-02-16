@@ -7,12 +7,8 @@
     if(isset($_POST['btn']) && $_POST['btn'] == 'Registrar'){
         if(isset($_POST['usuario']) && isset($_POST['contra']) && !empty($_POST['usuario']) && !
         empty($_POST['contra'])){
-            //echo 'Recibio del POST', '<br />';
             $user = $_POST['usuario'];
             $pwd = md5($_POST['contra']);
-            //$pwd = $_POST['contra'];
-            //echo $user, '<br />';
-            //echo $pwd, '<br />';
             $query = "INSERT INTO usuario (nombreUsuario, password) values('$user', '$pwd')";
             $rsQuery = mysqli_query($con, $query) or die(mysqli_error($con));
 
